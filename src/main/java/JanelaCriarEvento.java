@@ -14,6 +14,7 @@ public class JanelaCriarEvento extends JFrame{
     private JLabel paisLbl;
     private JTextField paisTextField;
     private JButton btnCriarEvento;
+    private JButton btnBack;
 
     public JanelaCriarEvento (String titulo) {
         super(titulo);

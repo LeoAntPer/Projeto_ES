@@ -2,36 +2,34 @@ import javax.swing.*;
 import java.util.LinkedList;
 import java.util.List;
 
-public class JanelaGerirEvento extends JFrame{
-    private JPanel panelGerir;
-    private JButton btnGerir;
-    private JButton btnCriar;
-    private JList<String> provasList;
-    private JButton btnEditar;
+public class JanelaAtletaEventos extends JFrame{
+    private JPanel panelEventos;
+    private JButton btnInscrever;
     private JButton btnEliminar;
     private JButton btnBack;
+    private JList<String> eventosList;
 
-    public JanelaGerirEvento(String titulo)  {
+    public JanelaAtletaEventos (String titulo) {
         super(titulo);
 
         List<String> itens;
         itens = new LinkedList<>();
-        itens.add("Masculino-75Kg");
-        itens.add("Masculino-100Kg");
-        itens.add("Feminino-70Kg");
+        itens.add("Jujutso");
+        itens.add("Karate");
+        itens.add("Aikedor");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
         for(String item: itens) {
             modeloLista.addElement(item);
         }
 
-        provasList.setModel(modeloLista);
+        eventosList.setModel(modeloLista);
 
-        setContentPane(panelGerir);
+        setContentPane(panelEventos);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
     }
 
     public static void main(String[] args) {
-        new JanelaGerirEvento("Gerir Evento").setVisible(true);
+        new JanelaAtletaEventos("Eventos").setVisible(true);
     }
 }
