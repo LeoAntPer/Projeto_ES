@@ -8,6 +8,7 @@ public class JanelaCriarProva extends JFrame{
     private JLabel generoLbl;
     private JTextField pesoTextField;
     private JLabel pesoLbl;
+    private JButton btnImportar;
 
     public JanelaCriarProva(String titulo) {
         super(titulo);

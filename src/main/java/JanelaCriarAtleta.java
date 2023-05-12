@@ -6,12 +6,12 @@ public class JanelaCriarAtleta extends JFrame{
     private JButton btnBack;
     private JLabel nomeLbl;
     private JTextField nomeTextField;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
-    private JTextField textField6;
+    private JTextField paisTextField;
+    private JTextField generoTextField;
+    private JTextField modatidadeTextField;
+    private JTextField pesoTextField;
+    private JTextField dataNascTextField;
+    private JTextField contactoTextField;
     private JLabel paisLbl;
     private JLabel generoLbl;
     private JLabel modalidadeLbl;

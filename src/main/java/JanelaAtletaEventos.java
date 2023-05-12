@@ -8,6 +8,8 @@ public class JanelaAtletaEventos extends JFrame{
     private JButton btnEliminar;
     private JButton btnBack;
     private JList<String> eventosList;
+    private JButton btnProvas;
+    private JButton btnResultado;
 
     public JanelaAtletaEventos (String titulo) {
         super(titulo);

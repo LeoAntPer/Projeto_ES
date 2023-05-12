@@ -1,12 +1,12 @@
 import javax.swing.*;
 
-public class JanelaGerirAtleta extends  JFrame{
+public class JanelaGerirAtleta extends JFrame {
     private JPanel panelGerir;
     private JButton btnEditar;
     private JButton btnEliminar;
     private JButton btnBack;
 
-    public JanelaGerirAtleta (String titulo) {
+    public JanelaGerirAtleta(String titulo) {
         super(titulo);
 
         setContentPane(panelGerir);

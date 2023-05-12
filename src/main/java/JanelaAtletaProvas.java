@@ -2,17 +2,13 @@ import javax.swing.*;
 import java.util.LinkedList;
 import java.util.List;
 
-public class JanelaGerirEvento extends JFrame{
-    private JPanel panelGerir;
-    private JButton btnGerir;
-    private JButton btnCriar;
-    private JList<String> provasList;
-    private JButton btnEditar;
-    private JButton btnEliminar;
+public class JanelaAtletaProvas extends JFrame{
+    private JPanel panelProvas;
+    private JButton btnCalendario;
     private JButton btnBack;
-    private JButton btnFecharInsc;
+    private JList<String> provasList;
 
-    public JanelaGerirEvento(String titulo)  {
+    public JanelaAtletaProvas(String titulo) {
         super(titulo);
 
         List<String> itens;
@@ -27,12 +23,12 @@ public class JanelaGerirEvento extends JFrame{
 
         provasList.setModel(modeloLista);
 
-        setContentPane(panelGerir);
+        setContentPane(panelProvas);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
     }
 
     public static void main(String[] args) {
-        new JanelaGerirEvento("Gerir Evento").setVisible(true);
+        new JanelaAtletaProvas("Provas").setVisible(true);
     }
 }

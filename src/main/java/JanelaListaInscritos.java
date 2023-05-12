@@ -2,35 +2,32 @@ import javax.swing.*;
 import java.util.LinkedList;
 import java.util.List;
 
-public class JanelaAdminAtletas extends JFrame{
-    private JPanel panelAtletas;
-    private JButton btnCriar;
-    private JButton btnGerir;
+public class JanelaListaInscritos extends JFrame{
+    private JPanel panelInscritos;
     private JButton btnBack;
-    private JList<String> atletasList;
-    private JButton btnInscricoes;
+    private JList<String> inscritosList;
 
-    public JanelaAdminAtletas (String titulo) {
+    public JanelaListaInscritos(String titulo) {
         super(titulo);
+
 
         List<String> itens;
         itens = new LinkedList<>();
         itens.add("Mário Cabral");
-        itens.add("Filipa Anilo");
         itens.add("John Johnson");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
         for(String item: itens) {
             modeloLista.addElement(item);
         }
 
-        atletasList.setModel(modeloLista);
+        inscritosList.setModel(modeloLista);
 
-        setContentPane(panelAtletas);
+        setContentPane(panelInscritos);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
     }
 
     public static void main(String[] args) {
-        new JanelaAdminAtletas("Atletas").setVisible(true);
+        new JanelaListaInscritos("Inscritos").setVisible(true);
     }
 }
