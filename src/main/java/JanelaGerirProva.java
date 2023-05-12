@@ -9,6 +9,7 @@ public class JanelaGerirProva extends JFrame {
     private JButton btnBack;
     private JButton btnListar;
     private JButton btnCalendario;
+    private JButton btnAprProgresso;
 
     public JanelaGerirProva(String titulo) {
         super(titulo);

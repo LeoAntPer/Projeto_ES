@@ -18,6 +18,7 @@ public class JanelaCriarAtleta extends JFrame{
     private JLabel pesoLbl;
     private JLabel dataNascLbl;
     private JLabel contactoLbl;
+    private JButton btnImportar;
 
     public JanelaCriarAtleta (String titulo) {
         super(titulo);
