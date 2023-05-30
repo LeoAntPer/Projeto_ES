@@ -1,7 +1,7 @@
 import javax.swing.*;
 
 public class JanelaCriarEvento extends JFrame{
-    private JPanel panelGerir;
+    private JPanel panelCriar;
     private JButton btnImportarEvento;
     private JTextField eventoNomeTextField;
     private JLabel eventoNomeLbl;
@@ -19,7 +19,7 @@ public class JanelaCriarEvento extends JFrame{
     public JanelaCriarEvento (String titulo) {
         super(titulo);
 
-        setContentPane(panelGerir);
+        setContentPane(panelCriar);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
     }

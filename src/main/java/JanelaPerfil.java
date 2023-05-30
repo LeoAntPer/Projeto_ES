@@ -1,8 +1,8 @@
 import javax.swing.*;
 
 public class JanelaPerfil extends JFrame {
-    private JPanel JanelaP;
-    private JButton btnUser;
+    private JPanel panelPerfis;
+    private JButton btnFuncionario;
     private JButton btnAtleta;
     private JButton btnAdmin;
     private JLabel perfilLabel;
@@ -10,7 +10,7 @@ public class JanelaPerfil extends JFrame {
     public JanelaPerfil(String titulo) {
         super(titulo);
 
-        setContentPane(JanelaP);
+        setContentPane(panelPerfis);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
     }

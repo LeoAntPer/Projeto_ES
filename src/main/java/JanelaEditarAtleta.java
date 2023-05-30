@@ -4,7 +4,7 @@ public class JanelaEditarAtleta extends JFrame{
     private JPanel panelEditar;
     private JButton btnConfirmar;
     private JButton btnBack;
-    private JTextField textField1;
+    private JTextField nomeTextField;
     private JLabel nomeLbl;
     private JLabel paisLbl;
     private JLabel generoLbl;
@@ -12,6 +12,12 @@ public class JanelaEditarAtleta extends JFrame{
     private JLabel pesoLbl;
     private JLabel dataNascLbl;
     private JLabel contactoLbl;
+    private JTextField paisTextField;
+    private JTextField generoTextField;
+    private JTextField modalidadeTextField;
+    private JTextField pesoTextField;
+    private JTextField dataNascTextField;
+    private JTextField contactoTextField;
 
     public JanelaEditarAtleta (String titulo) {
         super(titulo);

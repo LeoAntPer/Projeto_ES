@@ -8,6 +8,8 @@ public class JanelaEditarProva extends JFrame{
     private JLabel generoLbl;
     private JTextField pesoTextField;
     private JLabel pesoLbl;
+    private JTextField modalidadeTextField;
+    private JLabel modalidadeLbl;
 
     public JanelaEditarProva (String titulo) {
         super(titulo);

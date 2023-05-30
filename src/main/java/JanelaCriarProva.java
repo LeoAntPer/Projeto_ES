@@ -9,6 +9,8 @@ public class JanelaCriarProva extends JFrame{
     private JTextField pesoTextField;
     private JLabel pesoLbl;
     private JButton btnImportar;
+    private JLabel modalidadeLbl;
+    private JTextField modalidadeTextField;
 
     public JanelaCriarProva(String titulo) {
         super(titulo);

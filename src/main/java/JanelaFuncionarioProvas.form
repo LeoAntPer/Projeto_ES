@@ -20,7 +20,7 @@
           <text value="Atletas"/>
         </properties>
       </component>
-      <component id="b96bc" class="javax.swing.JButton" binding="button2" default-binding="true">
+      <component id="b96bc" class="javax.swing.JButton" binding="btnBack">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>

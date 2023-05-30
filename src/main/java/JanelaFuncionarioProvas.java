@@ -5,7 +5,7 @@ import java.util.List;
 public class JanelaFuncionarioProvas extends JFrame {
     private JPanel panelProvas;
     private JButton btnAtletas;
-    private JButton button2;
+    private JButton btnBack;
     private JList<String> provasList;
 
     public JanelaFuncionarioProvas(String titulo) {

@@ -5,7 +5,7 @@ public class JanelaPrincipalAdmin extends JFrame{
     private JLabel adminLabel;
     private JButton btnGerirEvento;
     private JButton btnGerirAtletas;
-    private JButton btnVoltar;
+    private JButton btnBack;
 
     public JanelaPrincipalAdmin (String titulo) {
         super(titulo);
