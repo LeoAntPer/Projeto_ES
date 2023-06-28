@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -6,29 +8,29 @@ public class JanelaAtletaProvas extends JFrame{
     private JPanel panelProvas;
     private JButton btnCalendario;
     private JButton btnBack;
-    private JList<String> provasList;
+    private JList<Prova> provasList;
 
-    public JanelaAtletaProvas(String titulo) {
+    public JanelaAtletaProvas(String titulo, List<Prova> listaProvas) {
         super(titulo);
 
-        List<String> itens;
-        itens = new LinkedList<>();
-        itens.add("Masculino-75Kg");
-        itens.add("Masculino-100Kg");
-        itens.add("Feminino-70Kg");
-        DefaultListModel<String> modeloLista = new DefaultListModel<>();
-        for(String item: itens) {
-            modeloLista.addElement(item);
+        DefaultListModel<Prova> modeloLista = new DefaultListModel<>();
+        for(Prova prova: listaProvas) {
+            modeloLista.addElement(prova);
         }
-
         provasList.setModel(modeloLista);
 
         setContentPane(panelProvas);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
+        btnBack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                dispose();
+            }
+        });
     }
 
     public static void main(String[] args) {
-        new JanelaAtletaProvas("Provas").setVisible(true);
+//        new JanelaAtletaProvas("Provas").setVisible(true);
     }
 }
