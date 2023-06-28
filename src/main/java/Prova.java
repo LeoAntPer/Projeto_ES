@@ -10,8 +10,8 @@ public class Prova {
         this.peso = peso;
         this.genero = genero;
 
-        inscritos = null;
-        combates = null;
+        inscritos = new LinkedList<>();
+        combates = new LinkedList<>();
     }
 
     public int getPeso() {
@@ -28,5 +28,10 @@ public class Prova {
 
     public LinkedList<Combate> getCombates() {
         return new LinkedList<>(combates);
+    }
+
+    public void inscrever(Atleta atleta) {
+//        Inscricao inscricao = new Inscricao(atleta.getPeso(), atleta.getGenero(), atleta.getNome(), this);
+        inscritos.add(atleta);
     }
 }

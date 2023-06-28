@@ -50,4 +50,18 @@ public class Atleta {
     public String getContacto() {
         return contacto;
     }
+
+    @Override
+    public String toString() {
+        return "Atleta{" +
+                "nome='" + nome + '\'' +
+                ", id=" + id +
+                ", pais='" + pais + '\'' +
+                ", genero='" + genero + '\'' +
+                ", modalidade='" + modalidade + '\'' +
+                ", peso=" + peso +
+                ", dataNasc='" + dataNasc + '\'' +
+                ", contacto='" + contacto + '\'' +
+                '}';
+    }
 }

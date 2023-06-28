@@ -4,21 +4,15 @@ import java.util.List;
 
 public class JanelaCalendarioProva extends JFrame{
     private JButton btnBack;
-    private JList<String> combatesList;
+    private JList<Combate> combatesList;
     private JPanel panelCalendario;
 
-    public JanelaCalendarioProva(String titulo) {
+    public JanelaCalendarioProva(String titulo, Prova prova) {
         super(titulo);
 
-
-        List<String> itens;
-        itens = new LinkedList<>();
-        itens.add("19/06/2023 - Joaquim Marques -VS- Vasco Ventura - Vencedor: Vasco Ventura");
-        itens.add("21/06/2023 - Marco Reis -VS- Luis Bento");
-        itens.add("22/06/2023 - Victor Venalti -VS- Alexander Smith");
-        DefaultListModel<String> modeloLista = new DefaultListModel<>();
-        for(String item: itens) {
-            modeloLista.addElement(item);
+        DefaultListModel<Combate> modeloLista = new DefaultListModel<>();
+        for(Combate combate: prova.getCombates()) {
+            modeloLista.addElement(combate);
         }
 
         combatesList.setModel(modeloLista);
@@ -31,6 +25,6 @@ public class JanelaCalendarioProva extends JFrame{
     }
 
     public static void main(String[] args) {
-        new JanelaCalendarioProva("Calendário de Provas").setVisible(true);
+//        new JanelaCalendarioProva("Calendário de Provas").setVisible(true);
     }
 }

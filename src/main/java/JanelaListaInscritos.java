@@ -5,23 +5,19 @@ import java.util.List;
 public class JanelaListaInscritos extends JFrame{
     private JPanel panelInscritos;
     private JButton btnBack;
-    private JList<String> inscritosList;
+    private JList<Atleta> inscritosList;
     private JButton btnDesclassificar;
 
-    public JanelaListaInscritos(String titulo) {
+    public JanelaListaInscritos(String titulo, Prova prova) {
         super(titulo);
 
-
-        List<String> itens;
-        itens = new LinkedList<>();
-        itens.add("Mário Cabral - 75Kg");
-        itens.add("John Johnson - 95Kg");
-        DefaultListModel<String> modeloLista = new DefaultListModel<>();
-        for(String item: itens) {
-            modeloLista.addElement(item);
+        // Popular JList
+        DefaultListModel<Atleta> modeloLista = new DefaultListModel<>();
+        for(Atleta atleta: prova.getInscritos()) {
+            modeloLista.addElement(atleta);
         }
-
         inscritosList.setModel(modeloLista);
+
 
         setContentPane(panelInscritos);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -29,6 +25,6 @@ public class JanelaListaInscritos extends JFrame{
     }
 
     public static void main(String[] args) {
-        new JanelaListaInscritos("Inscritos").setVisible(true);
+//        new JanelaListaInscritos("Inscritos").setVisible(true);
     }
 }
