@@ -7,7 +7,7 @@ public class Evento {
     private String local;
     private String pais;
     private String modalidade;
-    private final LinkedList<Atleta> inscritos;
+    private final LinkedList<Inscricao> inscritos;
     private final LinkedList<Prova> provas;
 
     public Evento(String nome, String dataInic, String dataFim, String local, String pais, String modalidade) {
@@ -18,7 +18,7 @@ public class Evento {
         this.pais = pais;
         this.modalidade = modalidade;
 
-        inscritos = null;
+        inscritos = new LinkedList<>();
         provas = new LinkedList<>();
     }
 
@@ -31,7 +31,7 @@ public class Evento {
         this.modalidade = modalidade;
     }
 
-    public void addProva(Prova prova) {
+    public void addProva(Prova prova) { // TODO: Delete
         provas.add(prova);
     }
 
@@ -39,17 +39,17 @@ public class Evento {
         return new LinkedList<>(provas);
     }
 
+    public Inscricao getInscricao(int atletaId) {
+        for (Inscricao inscricao: inscritos) {
+            if (inscricao.getAtletaId() == atletaId) {
+                return inscricao;
+            }
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
-        return "Evento{" +
-                "nome='" + nome + '\'' +
-                ", dataInic='" + dataInic + '\'' +
-                ", dataFim='" + dataFim + '\'' +
-                ", local='" + local + '\'' +
-                ", pais='" + pais + '\'' +
-                ", modalidade='" + modalidade + '\'' +
-                ", inscritos=" + inscritos +
-                ", provas=" + provas +
-                '}';
+        return nome;
     }
 }

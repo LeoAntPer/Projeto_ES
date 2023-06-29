@@ -28,6 +28,17 @@ public class JanelaAtletaProvas extends JFrame{
                 dispose();
             }
         });
+        btnCalendario.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Prova provaSelecionada = provasList.getSelectedValue();
+                if (provaSelecionada == null){
+                    JOptionPane.showMessageDialog(null, "E preciso selecionar uma prova primeiro");
+                    return;
+                }
+                new JanelaCalendarioProva("Calendario da prova",provaSelecionada).setVisible(true);
+            }
+        });
     }
 
     public static void main(String[] args) {

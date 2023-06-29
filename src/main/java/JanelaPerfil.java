@@ -28,6 +28,7 @@ public class JanelaPerfil extends JFrame {
     }
 
     public static void main(String[] args) {
+        /* DADOS TESTE */
         DadosAplicacao dadosAplicacao = DadosAplicacao.getInstance();
 
         // inicializacao eventos
@@ -56,6 +57,17 @@ public class JanelaPerfil extends JFrame {
         evento1.addProva(prova1);
         evento1.addProva(prova2);
         evento2.addProva(prova2);
+
+        // combates
+        Combate combate1 = new Combate(atleta1, atleta2, "01-01-2000");
+        Combate combate2 = new Combate(atleta2, atleta1, "02-01-2000");
+        prova1.adicionarCombate(combate1);
+        prova1.adicionarCombate(combate2);
+        prova2.adicionarCombate(combate2);
+
+        // inscricoes
+        Inscricao inscricao1 = new Inscricao(atleta1.getId(), atleta1.getPeso(), atleta1.getGenero(), atleta1.getNome(), prova1);
+
         new JanelaPerfil("Perfis", dadosAplicacao).setVisible(true);
     }
 }

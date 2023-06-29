@@ -42,6 +42,22 @@ public class JanelaAtletaEventos extends JFrame{
                 dispose();
             }
         });
+        btnResultado.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Evento eventoSelecionado = eventosList.getSelectedValue();
+                if(eventoSelecionado == null) {
+                    JOptionPane.showMessageDialog(null, "E preciso selecionar um evento primeiro");
+                    return;
+                }
+                Inscricao inscricao = eventoSelecionado.getInscricao(atleta.getId());
+                if (inscricao != null) {
+                    JOptionPane.showMessageDialog(null, "Resultado da inscricao: " + inscricao.getStatus());
+                    return;
+                }
+                JOptionPane.showMessageDialog(null, "Nao esta inscrito neste evento");
+            }
+        });
     }
 
     public static void main(String[] args) {

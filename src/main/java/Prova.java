@@ -34,4 +34,13 @@ public class Prova {
 //        Inscricao inscricao = new Inscricao(atleta.getPeso(), atleta.getGenero(), atleta.getNome(), this);
         inscritos.add(atleta);
     }
+
+    public void adicionarCombate(Combate combate) { // TODO: Delete
+        combates.add(combate);
+    }
+
+    @Override
+    public String toString() {
+        return genero + " - " + peso + "Kg";
+    }
 }

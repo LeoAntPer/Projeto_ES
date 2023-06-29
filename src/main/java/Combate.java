@@ -29,4 +29,9 @@ public class Combate {
         }
         return "Ainda não existe vencedor";
     }
+
+    @Override
+    public String toString() {
+        return atletas.get(0).getNome() + " VS " + atletas.get(1).getNome() + " | Vencedor: " + getVencedor();
+    }
 }
