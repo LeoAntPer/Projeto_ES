@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.LinkedList;
 import java.util.List;
 
 public class JanelaPerfil extends JFrame {
@@ -31,6 +32,13 @@ public class JanelaPerfil extends JFrame {
                 new JanelaAdminEventos("Eventos", dadosAplicacao.getListaEventos()).setVisible(true);
             }
         });
+        btnFuncionario.addActionListener(this::btnFuncionarioActionPerformer);
+    }
+
+    private void btnFuncionarioActionPerformer(ActionEvent actionEvent) {
+        LinkedList<Evento> eventos = DadosAplicacao.getInstance().getListaEventos();
+        var janela = new JanelaFuncionarioEventos("Eventos", eventos);
+        janela.setVisible(true);
     }
 
     public static void main(String[] args) {

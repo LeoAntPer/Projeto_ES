@@ -6,22 +6,19 @@ public class JanelaFuncionarioEventos extends JFrame {
     private JPanel panelEventos;
     private JButton btnProvas;
     private JButton btnBack;
-    private JList<String> eventosList;
+    private JList<Evento> eventosList;
+    private LinkedList<Evento> eventos;
 
-    public JanelaFuncionarioEventos(String titulo) {
+    public JanelaFuncionarioEventos(String titulo, LinkedList<Evento> listaEventos) {
         super(titulo);
-
-        List<String> itens;
-        itens = new LinkedList<>();
-        itens.add("Jujutso - 2022");
-        itens.add("Karate - 2022");
-        itens.add("Aikedor - 2023");
-        DefaultListModel<String> modeloLista = new DefaultListModel<>();
-        for(String item: itens) {
-            modeloLista.addElement(item);
+        eventos = listaEventos;
+        DefaultListModel<Evento> modeloLista = new DefaultListModel<>();
+        for(Evento evento: listaEventos) {
+            modeloLista.addElement(evento);
         }
 
         eventosList.setModel(modeloLista);
+
         DefaultListCellRenderer renderer =  (DefaultListCellRenderer)eventosList.getCellRenderer();
         renderer.setHorizontalAlignment(JLabel.CENTER);
 
@@ -31,6 +28,6 @@ public class JanelaFuncionarioEventos extends JFrame {
     }
 
     public static void main(String[] args) {
-        new JanelaFuncionarioEventos("Eventos").setVisible(true);
+        new JanelaFuncionarioEventos("Eventos", new LinkedList<>()).setVisible(true);
     }
 }

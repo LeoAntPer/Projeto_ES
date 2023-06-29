@@ -13,10 +13,13 @@ public class JanelaGerirEvento extends JFrame{
     private JButton btnEliminar;
     private JButton btnBack;
     private JButton btnFecharInsc;
+    private final Evento evento;
+    private final LinkedList<Prova> provas;
 
     public JanelaGerirEvento(String titulo, Evento evento)  {
         super(titulo);
-
+        this.evento = evento;
+        provas = evento.getProvas();
         DefaultListModel<Prova> modeloLista = new DefaultListModel<>();
         for(Prova prova: evento.getProvas()) {
             modeloLista.addElement(prova);
@@ -35,15 +38,32 @@ public class JanelaGerirEvento extends JFrame{
                     JOptionPane.showMessageDialog(null, "E preciso selecionar uma prova primeiro");
                     return;
                 }
-                new JanelaGerirProva("Gerir Prova", provaSelecionada).setVisible(true);
+                new JanelaGerirProva("Gerir Prova", provaSelecionada, provas).setVisible(true);
             }
         });
+        btnEliminar.addActionListener(this::btnEliminarActionPerformer);
+        btnEditar.addActionListener(this::btnEditarActionPerformer);
+        btnCriar.addActionListener(this::btnCriarActionPerformer);
         btnBack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 dispose();
             }
         });
+    }
+
+    private void btnCriarActionPerformer(ActionEvent actionEvent) {
+        var janela = new JanelaCriarProva("Nova Prova", provas);
+        janela.setVisible(true);
+    }
+
+    private void btnEditarActionPerformer(ActionEvent actionEvent) {
+        var janela = new JanelaEditarEvento("Edição", evento);
+        janela.setVisible(true);
+    }
+
+    public void btnEliminarActionPerformer(ActionEvent actionEvent) {
+        DadosAplicacao.getInstance().getListaEventos().remove(evento);
     }
 
     public static void main(String[] args) {

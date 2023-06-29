@@ -11,10 +11,11 @@ public class JanelaAdminEventos extends JFrame {
     private JButton btnGerir;
     private JList<Evento> eventosList;
     private JButton btnBack;
+    private final LinkedList<Evento> listaEventos;
 
-    public JanelaAdminEventos (String titulo, List<Evento> listaEventos) {
+    public JanelaAdminEventos (String titulo, LinkedList<Evento> listaEventos) {
         super(titulo);
-
+        this.listaEventos = listaEventos;
         DefaultListModel<Evento> modeloLista = new DefaultListModel<>();
         for(Evento evento: listaEventos) {
             modeloLista.addElement(evento);
@@ -36,6 +37,10 @@ public class JanelaAdminEventos extends JFrame {
                 new JanelaGerirEvento("Gerir evento", eventoSelecionado).setVisible(true);
             }
         });
+
+        btnCriar.addActionListener(this::btnCriarActionPerformer);
+
+
         btnBack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -44,7 +49,12 @@ public class JanelaAdminEventos extends JFrame {
         });
     }
 
+    private void btnCriarActionPerformer(ActionEvent e) {
+        var janela = new JanelaCriarEvento("Criar Evento", listaEventos);
+        janela.setVisible(true);
+    }
+
     public static void main(String[] args) {
-//        new JanelaAdminEventos("Eventos").setVisible(true);
+       new JanelaAdminEventos("Eventos", new LinkedList<>()).setVisible(true);
     }
 }

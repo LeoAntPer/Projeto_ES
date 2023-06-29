@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
 
 public class JanelaPrincipalAdmin extends JFrame{
     private JPanel panelOpcoes;
@@ -14,6 +15,13 @@ public class JanelaPrincipalAdmin extends JFrame{
         setContentPane(panelOpcoes);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
+
+        btnGerirEvento.addActionListener(this::btnGerirEventoActionPerformer);
+    }
+
+    private void btnGerirEventoActionPerformer(ActionEvent actionEvent) {
+        var janela = new JanelaAdminEventos("Eventos", DadosAplicacao.getInstance().getListaEventos());
+        janela.setVisible(true);
     }
 
     public static void main(String[] args) {
