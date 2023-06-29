@@ -65,8 +65,8 @@ public class JanelaPerfil extends JFrame {
         evento2.addProva(prova2);
 
         // combates
-        Combate combate1 = new Combate(atleta1, atleta2, "01-01-2000");
-        Combate combate2 = new Combate(atleta2, atleta1, "02-01-2000");
+        Combate combate1 = new Combate(atleta1, atleta2, "01-01-2000", 1, 1);
+        Combate combate2 = new Combate(atleta2, atleta1, "02-01-2000", 2, 1);
         prova1.adicionarCombate(combate1);
         prova1.adicionarCombate(combate2);
         prova2.adicionarCombate(combate2);

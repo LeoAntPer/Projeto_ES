@@ -36,7 +36,7 @@ public class JanelaAtletaProvas extends JFrame{
                     JOptionPane.showMessageDialog(null, "E preciso selecionar uma prova primeiro");
                     return;
                 }
-                new JanelaCalendarioProva("Calendario da prova",provaSelecionada).setVisible(true);
+                new JanelaCalendarioProva("Calendario da prova", provaSelecionada).setVisible(true);
             }
         });
     }

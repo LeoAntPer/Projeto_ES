@@ -89,7 +89,7 @@ public class JanelaAtletaEventos extends JFrame{
                         int response = JOptionPane.showConfirmDialog(null, "Deseja remover a sua inscricao deste evento?",
                                 "Confirmar decisao", JOptionPane.YES_NO_OPTION);
                         if (response == JOptionPane.YES_OPTION) {
-                            eventoSelecionado.cancelar(inscricao);
+                            inscricao.setStatus(InscricaoStatus.CANCELED);
                             JOptionPane.showMessageDialog(null, "Inscricao removida com sucesso");
                         }
                     }

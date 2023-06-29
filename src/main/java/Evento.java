@@ -54,7 +54,7 @@ public class Evento {
         return null;
     }
 
-    public void inscreverEventoEProva(Atleta atleta, Prova prova) {
+    private void inscreverEventoEProva(Atleta atleta, Prova prova) {
         if (atleta != null) {
             Inscricao inscricao = new Inscricao(atleta.getId(), atleta.getPeso(), atleta.getGenero(), atleta.getNome());
             inscritos.add(inscricao);
@@ -77,10 +77,6 @@ public class Evento {
         // inscrever o atleta
         inscreverEventoEProva(atleta, provaElegivel);
         return true;
-    }
-
-    public void cancelar(Inscricao inscricao) {
-        inscricao.setStatus(InscricaoStatus.CANCELED);
     }
 
     public boolean isOngoing() {
