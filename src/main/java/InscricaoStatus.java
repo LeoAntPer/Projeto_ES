@@ -1,6 +1,7 @@
 public enum InscricaoStatus {
     PENDING("Pendente"),
-    DISQUALIFIED("Desqualificado");
+    DISQUALIFIED("Desqualificado"),
+    CANCELED("Cancelada");
 
 
     private final String description;

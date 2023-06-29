@@ -3,16 +3,14 @@ public class Inscricao {
     private final int pesoAtleta;
     private final String generoAtleta;
     private final String eventoNome;
-    private final Prova prova;
-    private final String status;
+    private InscricaoStatus status;
 
-    public Inscricao(int atletaId, int peso, String genero, String nome, Prova prova) {
+    public Inscricao(int atletaId, int peso, String genero, String nome) {
         this.atletaId = atletaId;
         pesoAtleta = peso;
         generoAtleta = genero;
         eventoNome = nome;
-        this.prova = prova;
-        this.status = InscricaoStatus.PENDING.toString();
+        this.status = InscricaoStatus.PENDING;
     }
 
     public int getPesoAtleta() {
@@ -23,11 +21,20 @@ public class Inscricao {
         return generoAtleta;
     }
 
-    public String getStatus() {
+    public InscricaoStatus getStatus() {
         return status;
+    }
+
+    public void setStatus(InscricaoStatus status) {
+        this.status = status;
     }
 
     public int getAtletaId(){
         return atletaId;
+    }
+
+    @Override
+    public String toString() {
+        return eventoNome + " | " + pesoAtleta + " | " + generoAtleta + " | " + status;
     }
 }

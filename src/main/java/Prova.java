@@ -1,9 +1,11 @@
+import com.sun.jdi.IncompatibleThreadStateException;
+
 import java.util.LinkedList;
 
 public class Prova {
     private int peso;
     private String genero;
-    private LinkedList<Atleta> inscritos;
+    private LinkedList<Inscricao> inscritos;
     private LinkedList<Combate> combates;
 
     public Prova(int peso, String genero) {
@@ -22,7 +24,7 @@ public class Prova {
         return genero;
     }
 
-    public LinkedList<Atleta> getInscritos() {
+    public LinkedList<Inscricao> getInscritos() {
         return new LinkedList<>(inscritos);
     }
 
@@ -31,8 +33,12 @@ public class Prova {
     }
 
     public void inscrever(Atleta atleta) {
-//        Inscricao inscricao = new Inscricao(atleta.getPeso(), atleta.getGenero(), atleta.getNome(), this);
-        inscritos.add(atleta);
+        Inscricao inscricao = new Inscricao(atleta.getId(), atleta.getPeso(), atleta.getGenero(), atleta.getNome());
+        inscritos.add(inscricao);
+    }
+
+    public void addInscricao(Inscricao inscricao) {
+        inscritos.add(inscricao);
     }
 
     public void adicionarCombate(Combate combate) { // TODO: Delete

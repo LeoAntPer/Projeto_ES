@@ -31,6 +31,18 @@ public class JanelaGerirProva extends JFrame {
                 new JanelaCalendarioProva("Calendario da prova", prova);
             }
         });
+        btnCalendario.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                new JanelaCalendarioProva("Calendario da prova", prova).setVisible(true);
+            }
+        });
+        btnBack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                dispose();
+            }
+        });
     }
 
     public static void main(String[] args) {

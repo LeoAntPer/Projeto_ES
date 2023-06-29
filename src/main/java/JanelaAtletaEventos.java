@@ -58,6 +58,51 @@ public class JanelaAtletaEventos extends JFrame{
                 JOptionPane.showMessageDialog(null, "Nao esta inscrito neste evento");
             }
         });
+        btnInscrever.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Evento eventoSelecionado = eventosList.getSelectedValue();
+                if(eventoSelecionado == null) {
+                    JOptionPane.showMessageDialog(null, "E preciso selecionar um evento primeiro");
+                    return;
+                }
+                if (eventoSelecionado.inscrever(atleta)){
+                    JOptionPane.showMessageDialog(null, "Inscricao efetuada com sucesso");
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Nao existem provas no evento onde se pode inscrever");
+                }
+            }
+        });
+        btnEliminar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Evento eventoSelecionado = eventosList.getSelectedValue();
+                if(eventoSelecionado == null) {
+                    JOptionPane.showMessageDialog(null, "E preciso selecionar um evento primeiro");
+                    return;
+                }
+                Inscricao inscricao = eventoSelecionado.getInscricao(atleta.getId());
+                if (inscricao != null) {
+                    if(!eventoSelecionado.isOngoing()) {
+                        // Confirmacao
+                        int response = JOptionPane.showConfirmDialog(null, "Deseja remover a sua inscricao deste evento?",
+                                "Confirmar decisao", JOptionPane.YES_NO_OPTION);
+                        if (response == JOptionPane.YES_OPTION) {
+                            eventoSelecionado.cancelar(inscricao);
+                            JOptionPane.showMessageDialog(null, "Inscricao removida com sucesso");
+                        }
+                    }
+                    else {
+                        // evento ongoing, nao da para remover inscricao
+                        JOptionPane.showMessageDialog(null, "Nao foi possivel remover inscricao pois o evento ja comecou");
+                    }
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Nao foi possivel remover inscricao pois nao esta inscrito no evento selecionado");
+                }
+            }
+        });
     }
 
     public static void main(String[] args) {

@@ -21,8 +21,14 @@ public class JanelaPerfil extends JFrame {
         btnAtleta.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                Atleta atletaTeste = new Atleta("Foo Bar", 1, "PT", "M", "Judo", 70, "20-1-2003", "test@mail");
+                Atleta atletaTeste = new Atleta("Atleta Teste", 3, "PT", "M", "Judo", 70, "20-1-2003", "test@mail");
                 new JanelaAtletaEventos("Eventos", atletaTeste, dadosAplicacao.getListaEventos()).setVisible(true);
+            }
+        });
+        btnAdmin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                new JanelaAdminEventos("Eventos", dadosAplicacao.getListaEventos()).setVisible(true);
             }
         });
     }
@@ -66,7 +72,9 @@ public class JanelaPerfil extends JFrame {
         prova2.adicionarCombate(combate2);
 
         // inscricoes
-        Inscricao inscricao1 = new Inscricao(atleta1.getId(), atleta1.getPeso(), atleta1.getGenero(), atleta1.getNome(), prova1);
+//        evento1.addInscricao(atleta1);
+//        evento1.addInscricao(atleta2);
+//        evento2.addInscricao(atleta2);
 
         new JanelaPerfil("Perfis", dadosAplicacao).setVisible(true);
     }

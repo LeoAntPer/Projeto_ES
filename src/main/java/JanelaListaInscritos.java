@@ -1,20 +1,22 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.LinkedList;
 import java.util.List;
 
 public class JanelaListaInscritos extends JFrame{
     private JPanel panelInscritos;
     private JButton btnBack;
-    private JList<Atleta> inscritosList;
+    private JList<Inscricao> inscritosList;
     private JButton btnDesclassificar;
 
     public JanelaListaInscritos(String titulo, Prova prova) {
         super(titulo);
 
         // Popular JList
-        DefaultListModel<Atleta> modeloLista = new DefaultListModel<>();
-        for(Atleta atleta: prova.getInscritos()) {
-            modeloLista.addElement(atleta);
+        DefaultListModel<Inscricao> modeloLista = new DefaultListModel<>();
+        for(Inscricao inscricao: prova.getInscritos()) {
+            modeloLista.addElement(inscricao);
         }
         inscritosList.setModel(modeloLista);
 
@@ -22,6 +24,12 @@ public class JanelaListaInscritos extends JFrame{
         setContentPane(panelInscritos);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
+        btnBack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                dispose();
+            }
+        });
     }
 
     public static void main(String[] args) {
